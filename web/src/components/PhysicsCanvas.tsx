@@ -300,10 +300,9 @@ export function PhysicsCanvas({
   return (
     <div
       ref={containerRef}
-      className="flex-1 rounded-lg overflow-hidden relative"
+      className="flex-1 rounded-lg overflow-hidden relative min-h-[240px] md:min-h-[400px]"
       style={{
         border: "1px solid var(--line)",
-        minHeight: 400,
         cursor:
           activeTool === "select"
             ? "default"

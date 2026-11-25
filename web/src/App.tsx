@@ -45,7 +45,7 @@ export default function App() {
     >
       {/* Header */}
       <header
-        className="flex items-center justify-between px-4 py-2 shrink-0"
+        className="flex flex-wrap items-center justify-between gap-2 px-4 py-2 shrink-0"
         style={{ borderBottom: "1px solid var(--line)" }}
       >
         <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export default function App() {
           </span>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3 min-w-0">
           <Toolbar activeTool={activeTool} onToolChange={setActiveTool} />
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -83,7 +83,7 @@ export default function App() {
       </header>
 
       {/* Main content */}
-      <div className="flex flex-1 min-h-0 p-3 gap-3">
+      <div className="flex flex-col md:flex-row flex-1 min-h-0 p-3 gap-3">
         {/* Canvas area */}
         <PhysicsCanvas
           objects={objects}
@@ -98,7 +98,7 @@ export default function App() {
 
         {/* Sidebar */}
         {sidebarOpen && (
-          <aside className="w-64 shrink-0 flex flex-col gap-3 overflow-y-auto">
+          <aside className="w-full max-h-[40vh] md:w-64 md:max-h-none shrink-0 flex flex-col gap-3 overflow-y-auto">
             <ControlsPanel
               config={config}
               onConfigChange={setConfig}

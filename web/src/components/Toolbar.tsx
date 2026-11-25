@@ -16,7 +16,7 @@ const TOOLS: { type: ToolType; label: string; icon: string }[] = [
 
 export function Toolbar({ activeTool, onToolChange }: ToolbarProps) {
   return (
-    <div className="flex gap-1 p-2 rounded-lg" style={{ background: "var(--panel)" }}>
+    <div className="flex gap-1 p-2 rounded-lg flex-wrap" style={{ background: "var(--panel)" }}>
       {TOOLS.map((tool) => (
         <button
           key={tool.type}
